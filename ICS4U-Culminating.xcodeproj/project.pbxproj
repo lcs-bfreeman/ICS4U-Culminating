@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		04B610B42840FF0D0033030E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B610B32840FF0D0033030E /* main.swift */; };
 		04B610BE284100590033030E /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B610BD284100590033030E /* Node.swift */; };
+		A617D76D284104B700DDBDE7 /* NodeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A617D76C284104B700DDBDE7 /* NodeStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,7 @@
 		04B610B32840FF0D0033030E /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		04B610BC2840FFF00033030E /* input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
 		04B610BD284100590033030E /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		A617D76C284104B700DDBDE7 /* NodeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				04B610B32840FF0D0033030E /* main.swift */,
+				A617D76B2841049600DDBDE7 /* ViewModel */,
 				04B610BB2840FFD30033030E /* Model */,
 				04B610BA2840FFC90033030E /* Graph */,
 			);
@@ -81,6 +84,14 @@
 				04B610BD284100590033030E /* Node.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A617D76B2841049600DDBDE7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A617D76C284104B700DDBDE7 /* NodeStore.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04B610B42840FF0D0033030E /* main.swift in Sources */,
+				A617D76D284104B700DDBDE7 /* NodeStore.swift in Sources */,
 				04B610BE284100590033030E /* Node.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,8 +11,13 @@ struct Node: Identifiable {
     let id: Int
     let paragraphs: [String]
     let image: String?
-    let edges: [Int]
+    let edges: [Edge]
     
+}
+
+struct Edge {
+    let destinationId: Int
+    let prompt: String
 }
 
 

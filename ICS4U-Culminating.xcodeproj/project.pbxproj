@@ -30,6 +30,7 @@
 		04B610B32840FF0D0033030E /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		04B610BC2840FFF00033030E /* input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
 		04B610BD284100590033030E /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		04B610C0284525CD0033030E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A617D76C284104B700DDBDE7 /* NodeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeStore.swift; sourceTree = "<group>"; };
 		A617D76E28451D7400DDBDE7 /* Edge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Edge.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -48,6 +49,7 @@
 		04B610A72840FF0D0033030E = {
 			isa = PBXGroup;
 			children = (
+				04B610C0284525CD0033030E /* Assets.xcassets */,
 				04B610B22840FF0D0033030E /* ICS4U-Culminating */,
 				04B610B12840FF0D0033030E /* Products */,
 			);

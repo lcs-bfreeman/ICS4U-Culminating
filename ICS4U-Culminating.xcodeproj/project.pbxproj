@@ -11,6 +11,7 @@
 		04B610BE284100590033030E /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B610BD284100590033030E /* Node.swift */; };
 		A617D76D284104B700DDBDE7 /* NodeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A617D76C284104B700DDBDE7 /* NodeStore.swift */; };
 		A617D76F28451D7400DDBDE7 /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A617D76E28451D7400DDBDE7 /* Edge.swift */; };
+		A617D775284525E900DDBDE7 /* mainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A617D774284525E900DDBDE7 /* mainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,6 +33,7 @@
 		04B610BD284100590033030E /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		A617D76C284104B700DDBDE7 /* NodeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeStore.swift; sourceTree = "<group>"; };
 		A617D76E28451D7400DDBDE7 /* Edge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Edge.swift; sourceTree = "<group>"; };
+		A617D774284525E900DDBDE7 /* mainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +66,8 @@
 		04B610B22840FF0D0033030E /* ICS4U-Culminating */ = {
 			isa = PBXGroup;
 			children = (
-				04B610B32840FF0D0033030E /* main.swift */,
+				A617D773284525BA00DDBDE7 /* iOS */,
+				A617D772284525B300DDBDE7 /* macOS */,
 				A617D76B2841049600DDBDE7 /* ViewModel */,
 				04B610BB2840FFD30033030E /* Model */,
 				04B610BA2840FFC90033030E /* Graph */,
@@ -95,6 +98,22 @@
 				A617D76C284104B700DDBDE7 /* NodeStore.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A617D772284525B300DDBDE7 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				04B610B32840FF0D0033030E /* main.swift */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		A617D773284525BA00DDBDE7 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				A617D774284525E900DDBDE7 /* mainView.swift */,
+			);
+			path = iOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +177,7 @@
 				04B610B42840FF0D0033030E /* main.swift in Sources */,
 				A617D76D284104B700DDBDE7 /* NodeStore.swift in Sources */,
 				A617D76F28451D7400DDBDE7 /* Edge.swift in Sources */,
+				A617D775284525E900DDBDE7 /* mainView.swift in Sources */,
 				04B610BE284100590033030E /* Node.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

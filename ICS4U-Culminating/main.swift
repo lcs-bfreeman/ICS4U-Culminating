@@ -7,5 +7,6 @@
 
 import Foundation
 
-print("Hello, World!")
-
+print("The Royal Heist")
+print("===============")
+print("")

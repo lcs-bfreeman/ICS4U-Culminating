@@ -12,12 +12,7 @@ struct Node: Identifiable {
     let paragraphs: [String]
     let image: String?
     let edges: [Edge]
-    
-}
-
-struct Edge {
-    let destinationId: Int
-    let prompt: String
+    let ending: Bool
 }
 
 

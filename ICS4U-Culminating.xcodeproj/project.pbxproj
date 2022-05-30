@@ -10,6 +10,7 @@
 		04B610B42840FF0D0033030E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B610B32840FF0D0033030E /* main.swift */; };
 		04B610BE284100590033030E /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B610BD284100590033030E /* Node.swift */; };
 		A617D76D284104B700DDBDE7 /* NodeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A617D76C284104B700DDBDE7 /* NodeStore.swift */; };
+		A617D76F28451D7400DDBDE7 /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A617D76E28451D7400DDBDE7 /* Edge.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,6 +31,7 @@
 		04B610BC2840FFF00033030E /* input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
 		04B610BD284100590033030E /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		A617D76C284104B700DDBDE7 /* NodeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeStore.swift; sourceTree = "<group>"; };
+		A617D76E28451D7400DDBDE7 /* Edge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Edge.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				04B610BD284100590033030E /* Node.swift */,
+				A617D76E28451D7400DDBDE7 /* Edge.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 			files = (
 				04B610B42840FF0D0033030E /* main.swift in Sources */,
 				A617D76D284104B700DDBDE7 /* NodeStore.swift in Sources */,
+				A617D76F28451D7400DDBDE7 /* Edge.swift in Sources */,
 				04B610BE284100590033030E /* Node.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

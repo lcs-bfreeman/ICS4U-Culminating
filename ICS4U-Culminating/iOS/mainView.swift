@@ -8,9 +8,36 @@
 import SwiftUI
 
 struct mainView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    
+    @State var activeNode = 0
+    
+    var gameIsOn: Bool{
+        return activeNode > 0
     }
+    
+    var currentNode: Node {
+        return nodes[activeNode] ?? emptyNode
+    }
+    
+    var body: some View {
+        if gameIsOn == false {
+            //welcome screen
+            Text("Wlecome")
+                .onTapGesture {
+                    startGame()
+                }
+        } else {
+            // Game begin's
+            
+            NodeView(node: currentNode, activeNode: $activeNode )
+        }
+    }
+    
+    func startGame() {
+        activeNode = 1
+        
+    }
+    
 }
 
 struct mainView_Previews: PreviewProvider {

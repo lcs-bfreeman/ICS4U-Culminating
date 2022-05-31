@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Edge {
+struct Edge: Hashable {
     let destinationId: Int
     let prompt: String
 }

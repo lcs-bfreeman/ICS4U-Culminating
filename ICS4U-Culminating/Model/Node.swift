@@ -15,6 +15,7 @@ struct Node: Identifiable {
     let ending: Ending
 }
 
+let emptyNode = Node(id: 0, paragraphs: [], edges: [], ending: Ending(nodeID: 0, ending: false, death: false))
 
 let nodes: [Int: Node] = [
 
@@ -23,8 +24,8 @@ let nodes: [Int: Node] = [
          image: "Node 1",
          edges: [
             Edge(destinationId: 2, prompt: "Hear out the strange man and his stories."),
-            Edge(destinationId: <#T##Int#>, prompt: "Run away in fear."),
-            Edge(destinationId: <#T##Int#>, prompt: "Pretend as if you don’t see him.")
+            Edge(destinationId: 27, prompt: "Run away in fear."),
+            Edge(destinationId: 28, prompt: "Pretend as if you don’t see him.")
          ],
          ending: Ending(nodeID: 1, ending: false, death: false)
     ),
@@ -33,14 +34,31 @@ let nodes: [Int: Node] = [
          image: "Node 2",
          edges: [
          Edge(destinationId: 3, prompt: "Get into his van."),
-         Edge(destinationId: <#T##Int#>, prompt: "Begin to get suspicious and tell him you're not interested.")
+         Edge(destinationId: 26, prompt: "Begin to get suspicious and tell him you're not interested.")
          ],
-         ending: Ending(nodeID: 2, ending: false, death: false))
-],
+         ending: Ending(nodeID: 2, ending: false, death: false)),
+
     3 : Node(id: 3,
          paragraphs: ["He takes you around the corner and opens the door to his van.  You step into the van and take a seat. The door closes behind you with a thud.  It's surprisingly comfortable – almost too comfortable. Before you can do anything, you begin to feel drowsy and slowly pass out in the seat. When you wake up you are in what looks like your bedroom. Everything in this room is  identical to your room as a child from before your father passed. The man from earlier opens the door and walks over to you.", "He has something clenched in his hand.  He opens his hand and offers you two pills: a blue pill and a red pill. “Take the blue pill and you can leave. Take the red pill and you will have changed the course of your life.  But remember, once you have started on this path, you cannot change it.” Before you choose a pill, you ask him what his name is, to which he replies “That is not important to our journey, if the time is ever right I may tell you but until then there is no need to know it.” Do you take the…"],
          edges: [
             Edge(destinationId: 4, prompt: "Blue Pill."),
             Edge(destinationId: 5, prompt: "Red Pill.")
-    ],   ending: Ending(nodeID: 3, ending: false, death: false))
+    ],   ending: Ending(nodeID: 3, ending: false, death: false)),
     
+    4 : Node(id: 4,
+             paragraphs: ["", "The End."],
+             edges: [],
+             ending: Ending(nodeID: 4, ending: true, death: true)),
+    
+    5 : Node(id: 5,
+             paragraphs: <#T##[String]#>,
+             edges: [
+             Edge(destinationId: 6, prompt: "Continue listening.")],
+             ending: Ending(nodeID: 5, ending: false, death: false)),
+    
+    6 : Node(id: 6,
+             paragraphs: <#T##[String]#>,
+             edges: <#T##[Edge]#>,
+             ending: <#T##Ending#>)
+    
+]

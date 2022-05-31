@@ -29,7 +29,7 @@ struct mainView: View {
         } else {
             // Game begin's
             
-            NodeView(node: currentNode )
+            NodeView(node: currentNode, activeNode: $activeNode )
         }
     }
     

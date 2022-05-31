@@ -11,9 +11,45 @@ struct NodeView: View {
     
     let node: Node
     
+    @Binding var activeNode: Int
+    
+    var image: String {
+        return node.image ?? ""
+    }
+    
     var body: some View {
         
-Text ("We are in no view")
+        ScrollView {
+            VStack(alignment: .leading){
+                Text("\(node.id)")
+                
+                ForEach(node.paragraphs, id: \.self) { currentParagraph in
+                    Text(currentParagraph)
+                        .padding()
+                    
+                }
+                
+                    Image(image)
+                        .resizable()
+                        .scaledToFit()
+                
+                ForEach(node.edges, id: \.self) { currentEdge in
+                    HStack {
+                        
+                        Spacer()
+                        
+                        Text(currentEdge.prompt)
+                            .padding()
+                            .multilineTextAlignment(.trailing)
+                            .onTapGesture {
+                                activeNode = currentEdge.destinationId
+                            }
+                    }
+                }
+                
+            }
+        }
+        
     }
 }
 

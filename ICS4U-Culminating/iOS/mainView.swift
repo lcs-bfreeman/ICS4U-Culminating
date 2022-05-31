@@ -15,6 +15,10 @@ struct mainView: View {
         return activeNode > 0
     }
     
+    var currentNode: Node {
+        return nodes[activeNode] ?? emptyNode
+    }
+    
     var body: some View {
         if gameIsOn == false {
             //welcome screen
@@ -25,7 +29,7 @@ struct mainView: View {
         } else {
             // Game begin's
             
-            Text("Game is on")
+            NodeView(node: currentNode )
         }
     }
     

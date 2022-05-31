@@ -13,6 +13,7 @@
 		A617D76F28451D7400DDBDE7 /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A617D76E28451D7400DDBDE7 /* Edge.swift */; };
 		A617D775284525E900DDBDE7 /* mainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A617D774284525E900DDBDE7 /* mainView.swift */; };
 		A617D7772845287B00DDBDE7 /* Ending.swift in Sources */ = {isa = PBXBuildFile; fileRef = A617D7762845287B00DDBDE7 /* Ending.swift */; };
+		D7FF6A6F28469A1D00056076 /* NodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FF6A6E28469A1D00056076 /* NodeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +38,7 @@
 		A617D76E28451D7400DDBDE7 /* Edge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Edge.swift; sourceTree = "<group>"; };
 		A617D774284525E900DDBDE7 /* mainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainView.swift; sourceTree = "<group>"; };
 		A617D7762845287B00DDBDE7 /* Ending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ending.swift; sourceTree = "<group>"; };
+		D7FF6A6E28469A1D00056076 /* NodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				A617D774284525E900DDBDE7 /* mainView.swift */,
+				D7FF6A6E28469A1D00056076 /* NodeView.swift */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 				A617D76F28451D7400DDBDE7 /* Edge.swift in Sources */,
 				A617D775284525E900DDBDE7 /* mainView.swift in Sources */,
 				A617D7772845287B00DDBDE7 /* Ending.swift in Sources */,
+				D7FF6A6F28469A1D00056076 /* NodeView.swift in Sources */,
 				04B610BE284100590033030E /* Node.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,6 +314,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5383636JNT;
 				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -321,6 +326,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5383636JNT;
 				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};

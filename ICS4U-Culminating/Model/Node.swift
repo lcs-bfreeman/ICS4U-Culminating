@@ -15,7 +15,7 @@ struct Node: Identifiable {
     let ending: Ending
 }
 
-let emptyNode = Node(id: 0, paragraphs: [], edges: [], ending: Ending(nodeID: 0, ending: false, death: false))
+let emptyNode = Node(id: 0, paragraphs: [], image: "", edges: [], ending: Ending(nodeID: 0, ending: false, death: false))
 
 let nodes: [Int: Node] = [
 
@@ -82,7 +82,168 @@ let nodes: [Int: Node] = [
               ending: Ending(nodeID: 11, ending: true, category: "death")),
     12 : Node(id: 12,
               paragraphs: <#T##[String]#>,
-              edges: <#T##[Edge]#>,
-              ending: <#T##Ending#>)
-    
+              edges: [
+              Edge(destinationId: 13, prompt: <#T##String#>)],
+              ending: Ending(nodeID: 12, ending: false, category: "none")),
+    13: Node(id: 13,
+             paragraphs: <#T##[String]#>,
+             edges: [
+             Edge(destinationId: 14, prompt: <#T##String#>)],
+             ending: Ending(nodeID: 13, ending: false, category: "none")),
+    14 : Node(id: 14,
+              paragraphs: <#T##[String]#>,
+              edges: [
+              Edge(destinationId: 15, prompt: <#T##String#>)],
+              ending: Ending(nodeID: 14, ending: false, category: "none")),
+    15 : Node(id: 15,
+              paragraphs: <#T##[String]#>,
+              edges: [
+              Edge(destinationId: 16, prompt: <#T##String#>),
+              Edge(destinationId: 17, prompt: <#T##String#>)],
+              ending: Ending(nodeID: 15, ending: false, category: "none")),
+    16 : Node(id: 16,
+              paragraphs: <#T##[String]#>,
+              edges: [],
+              ending: Ending(nodeID: 16, ending: true, category: "death")),
+    17 : Node(id: 17,
+              paragraphs: <#T##[String]#>,
+              edges: [
+              Edge(destinationId: 18, prompt: <#T##String#>)],
+              ending: Ending(nodeID: 17, ending: false, category: "none")),
+    18 : Node(id: 18,
+              paragraphs: <#T##[String]#>,
+              edges: [
+              Edge(destinationId: 19, prompt: <#T##String#>),
+              Edge(destinationId: 20, prompt: <#T##String#>)],
+              ending: Ending(nodeID: 18, ending: false, category: "none")),
+    19 : Node(id: 19,
+              paragraphs: <#T##[String]#>,
+              edges: [],
+              ending: Ending(nodeID: 19, ending: true, category: "ok")),
+    20 : Node(id: 20,
+              paragraphs: <#T##[String]#>,
+              edges: [
+              Edge(destinationId: 21, prompt: <#T##String#>),
+              Edge(destinationId: 22, prompt: <#T##String#>)],
+              ending: Ending(nodeID: 20, ending: false, category: "none")),
+    21 : Node(id: 21,
+              paragraphs: <#T##[String]#>,
+              edges: [],
+              ending: Ending(nodeID: 21, ending: true, category: "death")),
+    22 : Node(id: 22,
+              paragraphs: <#T##[String]#>,
+              edges: [
+              Edge(destinationId: 23, prompt: <#T##String#>)],
+              ending: Ending(nodeID: 22, ending: false, category: "none")),
+    23 : Node(id: 23,
+              paragraphs: <#T##[String]#>,
+              edges: [
+              Edge(destinationId: 24, prompt: <#T##String#>),
+              Edge(destinationId: 25, prompt: <#T##String#>)],
+              ending: Ending(nodeID: 23, ending: false, category: "none")),
+    24 : Node(id: 24,
+              paragraphs: <#T##[String]#>,
+              edges: [],
+              ending: Ending(nodeID: 24, ending: true, category: "false")),
+    25 : Node(id: 25,
+              paragraphs: <#T##[String]#>,
+              edges: [],
+              ending: Ending(nodeID: 25, ending: true, category: "best")),
+    26 : Node(id: 26,
+              paragraphs: <#T##[String]#>,
+              edges: [
+              Edge(destinationId: 33, prompt: <#T##String#>)],
+              ending: Ending(nodeID: 26, ending: false, category: "none")),
+    27 : Node(id: 27,
+              paragraphs: <#T##[String]#>,
+              edges: [
+                Edge(destinationId: 29, prompt: <#T##String#>)],
+              ending: Ending(nodeID: 27, ending: false, category: "none")),
+    28 : Node(id: 28,
+              paragraphs: <#T##[String]#>,
+              edges: [
+              Edge(destinationId: 30, prompt: <#T##String#>)],
+              ending: Ending(nodeID: 28, ending: false, category: "none")),
+    29 : Node(id: 29,
+              paragraphs: <#T##[String]#>,
+              edges: [],
+              ending: Ending(nodeID: 29, ending: true, category: "death")),
+    30 : Node(id: 30,
+              paragraphs: <#T##[String]#>,
+              edges: [
+              Edge(destinationId: 31, prompt: <#T##String#>),
+              Edge(destinationId: 32, prompt: <#T##String#>)],
+              ending: Ending(nodeID: 30, ending: false, category: "none")),
+    31 : Node(id: 31,
+              paragraphs: <#T##[String]#>,
+              edges: [
+              Edge(destinationId: 3, prompt: <#T##String#>)],
+              ending: Ending(nodeID: 31, ending: false, category: "none")),
+    32 : Node(id: 32,
+              paragraphs: <#T##[String]#>,
+              edges: [],
+              ending: Ending(nodeID: 32, ending: true, category: "bad")),
+    33 : Node(id: 33,
+              paragraphs: <#T##[String]#>,
+              edges: [
+              Edge(destinationId: 34, prompt: <#T##String#>),
+              Edge(destinationId: 35, prompt: <#T##String#>)],
+              ending: Ending(nodeID: 33, ending: false, category: "none")),
+    34 : Node(id: 34,
+              paragraphs: <#T##[String]#>,
+              edges: [],
+              ending: Ending(nodeID: 34, ending: true, category: "medium")),
+    35 : Node(id: 35,
+              paragraphs: <#T##[String]#>,
+              edges: [
+              Edge(destinationId: 36, prompt: <#T##String#>),
+              Edge(destinationId: 37, prompt: <#T##String#>)],
+              ending: Ending(nodeID: 35, ending: false, category: "none")),
+    36 : Node(id: 36,
+              paragraphs: <#T##[String]#>,
+              edges: [
+              Edge(destinationId: 37, prompt: <#T##String#>),
+              Edge(destinationId: 38, prompt: <#T##String#>)],
+              ending: Ending(nodeID: 36, ending: false, category: "none")),
+    37 : Node(id: 37,
+              paragraphs: <#T##[String]#>,
+              edges: [
+              Edge(destinationId: 3, prompt: <#T##String#>)],
+              ending: Ending(nodeID: 37, ending: false, category: "none")),
+    38 : Node(id: 38,
+              paragraphs: <#T##[String]#>,
+              edges: [
+              Edge(destinationId: 39, prompt: <#T##String#>)],
+              ending: Ending(nodeID: 38, ending: false, category: "none")),
+    39 : Node(id: 39,
+              paragraphs: <#T##[String]#>,
+              edges: [
+              Edge(destinationId: 40, prompt: <#T##String#>),
+              Edge(destinationId: 41, prompt: <#T##String#>)],
+              ending: Ending(nodeID: 39, ending: false, category: "none")),
+    40 : Node(id: 40,
+              paragraphs: <#T##[String]#>,
+              edges: [],
+              ending: Ending(nodeID: 40, ending: true, category: "death")),
+    41 : Node(id: 41,
+              paragraphs: <#T##[String]#>,
+              edges: [
+              Edge(destinationId: 42, prompt: <#T##String#>)],
+              ending: Ending(nodeID: 41, ending: false, category: "none")),
+    42 : Node(id: 42,
+              paragraphs: <#T##[String]#>,
+              edges: [],
+              ending: Ending(nodeID: 42, ending: true, category: "good")),
+    43 : Node(id: 43,
+              paragraphs: <#T##[String]#>,
+              edges: [
+              Edge(destinationId: 34, prompt: <#T##String#>),
+              Edge(destinationId: 44, prompt: <#T##String#>)],
+              ending: Ending(nodeID: 43, ending: false, category: "none")),
+    44 : Node(id: 44,
+              paragraphs: <#T##[String]#>,
+              edges: [
+              Edge(destinationId: 37, prompt: <#T##String#>),
+              Edge(destinationId: 38, prompt: <#T##String#>)],
+              ending: Ending(nodeID: 44, ending: false, category: "none")),
 ]

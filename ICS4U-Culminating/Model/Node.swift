@@ -76,7 +76,7 @@ let nodes: [Int: Node] = [
              edges: [
              Edge(destinationId: 10, prompt: "You choose to hold onto it yourself till the start of the heist."),
              Edge(destinationId: 11, prompt: "You choose to give it to the mysterious man for protection.")],
-             ending: Ending(nodeID: 9, ending: false, death: false)),
+             ending: Ending(nodeID: 9, ending: false, category: "none")),
     10 : Node(id: 10,
               paragraphs: ["Now that all the pieces for the heist have been attained you must make the decision of time. Do you want to begin your heist at day or night?"],
               image: "",
@@ -282,7 +282,7 @@ let nodes: [Int: Node] = [
               Edge(destinationId: 44, prompt: "")],
               ending: Ending(nodeID: 43, ending: false, category: "none")),
     44 : Node(id: 44,
-              paragraphs: [],
+              paragraphs: [""],
               image: "",
               edges: [
               Edge(destinationId: 37, prompt: ""),

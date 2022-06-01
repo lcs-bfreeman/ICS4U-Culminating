@@ -10,5 +10,5 @@ import Foundation
 struct Ending {
     let nodeID: Int
     let ending: Bool
-    let death: Bool
+    let category: String
 }

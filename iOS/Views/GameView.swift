@@ -1,14 +1,13 @@
 //
-//  mainView.swift
-//  ICS4U-Culminating
+//  GameView.swift
+//  iOS
 //
-//  Created by Brad Kang on 2022-05-30.
+//  Created by Ben Freeman on 2022-06-01.
 //
 
 import SwiftUI
 
-struct mainView: View {
-    
+struct GameView: View {
     @State var activeNode = 0
     
     var gameIsOn: Bool{
@@ -37,11 +36,10 @@ struct mainView: View {
         activeNode = 1
         
     }
-    
 }
 
-struct mainView_Previews: PreviewProvider {
+struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        mainView()
+        GameView()
     }
 }

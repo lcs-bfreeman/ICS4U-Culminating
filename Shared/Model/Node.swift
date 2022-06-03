@@ -224,7 +224,7 @@ let nodes: [Int: Node] = [
               paragraphs: ["", "The End."],
               image: "",
               edges: [],
-              ending: Ending(nodeID: 34, ending: true, category: "medium")),
+              ending: Ending(nodeID: 34, ending: true, category: "ok")),
     35 : Node(id: 35,
               paragraphs: [],
               image: "",

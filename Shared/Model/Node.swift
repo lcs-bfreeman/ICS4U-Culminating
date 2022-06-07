@@ -246,8 +246,8 @@ let nodes: [Int: Node] = [
               paragraphs: [],
               image: "",
               edges: [
-              Edge(destinationId: 37, prompt: ""),
-              Edge(destinationId: 38, prompt: "")],
+              Edge(destinationId: 43, prompt: "")
+              ],
               ending: nil),
     37 : Node(id: 37,
               paragraphs: [],

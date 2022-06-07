@@ -31,8 +31,8 @@ struct NodeView: View {
                 
                 if Image(image) != Image("") {
                     Image(image)
-                    .resizable()
-                    .scaledToFit()
+                        .resizable()
+                        .scaledToFit()
                 }
                 ForEach(node.edges, id: \.self) { currentEdge in
                     HStack {
@@ -48,8 +48,13 @@ struct NodeView: View {
                     }
                 }
                 if node.ending != nil {
-                    Button("Restart") {
-                        atEnding()
+                    HStack {
+                        Spacer()
+                        Button("Restart") {
+                            atEnding()
+                        }
+                        .font(.system(size: 45))
+                        Spacer()
                     }
                 }
             }

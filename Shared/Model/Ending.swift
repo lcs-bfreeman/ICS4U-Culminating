@@ -18,6 +18,8 @@ struct Ending {
             return "#FFDE5F"  // Pale yellow
         case .ok:
             return "#D7883C"  // Orange
+        case .bad:
+            return "#C1531E"  // Deep orange
         case .death:
             return "#AB1800"  // Deep red
         }

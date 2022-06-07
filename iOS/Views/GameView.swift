@@ -56,7 +56,7 @@ struct GameView: View {
                 }
                 
                 Spacer()
-                Image("Royal Hiast title screen")
+                Image("Royal hist")
                     .resizable()
                     .scaledToFit()
                     .onTapGesture {

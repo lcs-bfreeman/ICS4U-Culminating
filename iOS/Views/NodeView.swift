@@ -20,7 +20,7 @@ struct NodeView: View {
     var body: some View {
         
         ScrollView {
-            VStack(alignment: .leading){
+            VStack(alignment: .leading) {
                 Text("\(node.id)")
                 
                 ForEach(node.paragraphs, id: \.self) { currentParagraph in
@@ -46,10 +46,19 @@ struct NodeView: View {
                             }
                     }
                 }
-                
+                if node.ending != nil {
+                    Button("Restart") {
+                        atEnding()
+                    }
+                }
             }
         }
-        
+    }
+    
+    func atEnding() {
+        if node.ending != nil {
+            activeNode = 0
+        }
     }
 }
 

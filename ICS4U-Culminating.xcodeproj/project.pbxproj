@@ -14,6 +14,8 @@
 		A617D7772845287B00DDBDE7 /* Ending.swift in Sources */ = {isa = PBXBuildFile; fileRef = A617D7762845287B00DDBDE7 /* Ending.swift */; };
 		A617D779284E5EE000DDBDE7 /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A617D778284E5EE000DDBDE7 /* Enumerations.swift */; };
 		A617D77A284E5EE000DDBDE7 /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A617D778284E5EE000DDBDE7 /* Enumerations.swift */; };
+		A6978C0B284FD03900BE65F5 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6978C0A284FD03900BE65F5 /* Functions.swift */; };
+		A6978C0C284FD03900BE65F5 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6978C0A284FD03900BE65F5 /* Functions.swift */; };
 		D7FF6A892847B0E500056076 /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FF6A882847B0E500056076 /* iOSApp.swift */; };
 		D7FF6A8B2847B0E500056076 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FF6A8A2847B0E500056076 /* ContentView.swift */; };
 		D7FF6A902847B0E900056076 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7FF6A8F2847B0E900056076 /* Preview Assets.xcassets */; };
@@ -49,6 +51,7 @@
 		A617D7762845287B00DDBDE7 /* Ending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ending.swift; sourceTree = "<group>"; };
 		A617D778284E5EE000DDBDE7 /* Enumerations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumerations.swift; sourceTree = "<group>"; };
 		A617D77B284FCB1700DDBDE7 /* output.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = output.pdf; sourceTree = "<group>"; };
+		A6978C0A284FD03900BE65F5 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		D7FF6A6E28469A1D00056076 /* NodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeView.swift; sourceTree = "<group>"; };
 		D7FF6A862847B0E500056076 /* iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7FF6A882847B0E500056076 /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
@@ -119,6 +122,7 @@
 				A617D76E28451D7400DDBDE7 /* Edge.swift */,
 				A617D7762845287B00DDBDE7 /* Ending.swift */,
 				A617D778284E5EE000DDBDE7 /* Enumerations.swift */,
+				A6978C0A284FD03900BE65F5 /* Functions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -271,6 +275,7 @@
 				04B610B42840FF0D0033030E /* main.swift in Sources */,
 				A617D76D284104B700DDBDE7 /* NodeStore.swift in Sources */,
 				A617D76F28451D7400DDBDE7 /* Edge.swift in Sources */,
+				A6978C0B284FD03900BE65F5 /* Functions.swift in Sources */,
 				A617D7772845287B00DDBDE7 /* Ending.swift in Sources */,
 				04B610BE284100590033030E /* Node.swift in Sources */,
 				A617D779284E5EE000DDBDE7 /* Enumerations.swift in Sources */,
@@ -284,6 +289,7 @@
 				D7FF6A9A2847B1CA00056076 /* NodeStore.swift in Sources */,
 				D7FF6A9B2847B1CA00056076 /* Node.swift in Sources */,
 				A617D77A284E5EE000DDBDE7 /* Enumerations.swift in Sources */,
+				A6978C0C284FD03900BE65F5 /* Functions.swift in Sources */,
 				D7FF6A9C2847B1CA00056076 /* Edge.swift in Sources */,
 				D7FF6A9D2847B1CA00056076 /* Ending.swift in Sources */,
 				D7FF6A8B2847B0E500056076 /* ContentView.swift in Sources */,

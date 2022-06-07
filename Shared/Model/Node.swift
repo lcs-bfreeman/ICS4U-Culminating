@@ -15,7 +15,7 @@ struct Node: Identifiable {
     let ending: Ending?
 }
 
-let emptyNode = Node(id: 0, paragraphs: [], image: "", edges: [], ending: Ending(nodeID: 0, ending: false, category: "none"))
+let emptyNode = Node(id: 0, paragraphs: [], image: "", edges: [], ending: nil)
 
 let nodes: [Int: Node] = [
 

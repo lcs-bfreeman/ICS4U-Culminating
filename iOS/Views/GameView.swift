@@ -14,7 +14,17 @@ struct GameView: View {
     
     @State var openEndings = false
     
-    var endingsFound = 0
+    @State var endingsFound = 0
+    
+    @State var bestEndingsFound = 0
+    
+    @State var goodEndingsFound = 0
+    
+    @State var okEndingsFound = 0
+    
+    @State var badEndingsFound = 0
+    
+    @State var deathEndingsFound = 0
     
     var gameIsOn: Bool{
         return activeNode > 0
@@ -43,7 +53,9 @@ struct GameView: View {
                 }
                 
                 Spacer()
-                Text("The Royal Heist")
+                Image("Royal Hiast title screen")
+                    .resizable()
+                    .scaledToFit()
                     .onTapGesture {
                         startGame()
                         
@@ -56,16 +68,18 @@ struct GameView: View {
             }
             .sheet(isPresented: $openEndings) {
                 VStack{
-                    Text("Best endings 0/0")
+                    Text("Best endings \(bestEndingsFound)/1")
                         .padding()
-                    Text("Death endings 0/0")
+                    Text("Good endings \(goodEndingsFound)/1")
                         .padding()
-                    Text("Ok endings 0/0")
+                    Text("Ok endings \(okEndingsFound)/2")
                         .padding()
-                    Text("Bad endings 0/0")
+                    Text("Bad endings \(badEndingsFound)/1")
                         .padding()
-                    Text("Good endings 0/0")
+                    Text("Death endings \(deathEndingsFound)/8")
                         .padding()
+
+
                 }
             }
         } else {

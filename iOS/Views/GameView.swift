@@ -15,10 +15,9 @@ struct GameView: View {
     @State var openEndings = false
     
     @State var isAtEnding = false
-    var endingsFound = 0
-  
-    @State var endingsFound = 0
     
+    @state var endingsFound = 0
+
     @State var bestEndingsFound = 0
     
     @State var goodEndingsFound = 0

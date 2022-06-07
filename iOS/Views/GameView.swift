@@ -14,6 +14,9 @@ struct GameView: View {
     
     @State var openEndings = false
     
+    @State var isAtEnding = false
+    var endingsFound = 0
+  
     @State var endingsFound = 0
     
     @State var bestEndingsFound = 0
@@ -25,6 +28,7 @@ struct GameView: View {
     @State var badEndingsFound = 0
     
     @State var deathEndingsFound = 0
+
     
     var gameIsOn: Bool{
         return activeNode > 0
@@ -85,13 +89,12 @@ struct GameView: View {
         } else {
             // Game begin's
             
-            NodeView(node: currentNode, activeNode: $activeNode )
+            NodeView(node: currentNode, activeNode: $activeNode)
         }
     }
     
     func startGame() {
         activeNode = 1
-        
     }
 }
 

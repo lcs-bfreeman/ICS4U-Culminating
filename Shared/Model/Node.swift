@@ -246,7 +246,8 @@ let nodes: [Int: Node] = [
               paragraphs: [],
               image: "",
               edges: [
-              Edge(destinationId: 43, prompt: "")
+              Edge(destinationId: 37, prompt: ""),
+              Edge(destinationId: 38, prompt: "")
               ],
               ending: nil),
     37 : Node(id: 37,
@@ -284,18 +285,4 @@ let nodes: [Int: Node] = [
               image: "",
               edges: [],
               ending: Ending(classification: .good, description: "You get the \\n gold but also PTSD")),
-    43 : Node(id: 43,
-              paragraphs: [],
-              image: "",
-              edges: [
-              Edge(destinationId: 34, prompt: ""),
-              Edge(destinationId: 44, prompt: "")],
-              ending: nil),
-    44 : Node(id: 44,
-              paragraphs: [""],
-              image: "",
-              edges: [
-              Edge(destinationId: 37, prompt: ""),
-              Edge(destinationId: 38, prompt: "")],
-              ending: nil),
 ]

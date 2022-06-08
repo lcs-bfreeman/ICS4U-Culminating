@@ -39,7 +39,13 @@ struct GameView: View {
     var body: some View {
         if gameIsOn == false {
             //welcome screen
+            ZStack{
+                
+                Color.black
+                    .ignoresSafeArea()
+                
             VStack {
+                
                 HStack{
                     Button("Endings Found \(endingsFound)/13") {
                         openEndings = true
@@ -65,10 +71,15 @@ struct GameView: View {
                 Spacer()
                 }
 
+            }
+            
+
+
             .sheet(isPresented: $openSettings) {
                 Text("Test")
             }
             .sheet(isPresented: $openEndings) {
+                
                 VStack{
                     Text("Best endings \(bestEndingsFound)/1")
                         .padding()

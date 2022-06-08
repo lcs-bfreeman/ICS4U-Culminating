@@ -50,8 +50,8 @@
 		A617D76E28451D7400DDBDE7 /* Edge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Edge.swift; sourceTree = "<group>"; };
 		A617D7762845287B00DDBDE7 /* Ending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ending.swift; sourceTree = "<group>"; };
 		A617D778284E5EE000DDBDE7 /* Enumerations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumerations.swift; sourceTree = "<group>"; };
-		A617D77B284FCB1700DDBDE7 /* output.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = output.pdf; sourceTree = "<group>"; };
 		A6978C0A284FD03900BE65F5 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		A6978C0F28501C8800BE65F5 /* output.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = output.pdf; sourceTree = "<group>"; };
 		D7FF6A6E28469A1D00056076 /* NodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeView.swift; sourceTree = "<group>"; };
 		D7FF6A862847B0E500056076 /* iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7FF6A882847B0E500056076 /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				04B610BC2840FFF00033030E /* input.txt */,
-				A617D77B284FCB1700DDBDE7 /* output.pdf */,
+				A6978C0F28501C8800BE65F5 /* output.pdf */,
 			);
 			path = Graph;
 			sourceTree = "<group>";

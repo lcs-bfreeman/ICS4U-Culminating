@@ -12,6 +12,18 @@ struct NodeView: View {
     let node: Node
     
     @Binding var activeNode: Int
+
+    @Binding var bestEndingsFound = 0
+    
+    @Binding var goodEndingsFound = 0
+    
+    @Binding var okEndingsFound = 0
+    
+    @Binding var badEndingsFound = 0
+    
+    @Binding var deathEndingsFound = 0
+    
+    @Binding var endingsFound: [Int]
     
     var image: String {
         return node.image ?? ""
@@ -31,8 +43,8 @@ struct NodeView: View {
                 
                 if Image(image) != Image("") {
                     Image(image)
-                    .resizable()
-                    .scaledToFit()
+                        .resizable()
+                        .scaledToFit()
                 }
                 ForEach(node.edges, id: \.self) { currentEdge in
                     HStack {
@@ -48,8 +60,14 @@ struct NodeView: View {
                     }
                 }
                 if node.ending != nil {
-                    Button("Restart") {
-                        atEnding()
+                    HStack {
+                        Spacer()
+                        Button("Restart") {
+                            atEnding()
+                            addEnding()
+                        }
+                        .font(.system(size: 45))
+                        Spacer()
                     }
                 }
             }
@@ -59,6 +77,26 @@ struct NodeView: View {
     func atEnding() {
         if node.ending != nil {
             activeNode = 0
+        }
+    }
+    func addEnding() {
+        if endingsFound.contains(node.id) {
+            endingsFound = endingsFound
+        }  else {
+            endingsFound.append(node.id)
+            if node.ending?.classification == .best {
+                bestEndingsFound += 1
+            } else if node.ending?.classification == .good {
+                goodEndingsFound += 1
+            } else if node.ending?.classification == .ok {
+                okEndingsFound += 1
+            } else if node.ending?.classification == .bad {
+                badEndingsFound += 1
+            } else if node.ending?.classification == .death {
+                deathEndingsFound += 1
+            } else {
+                break
+            }
         }
     }
 }

@@ -13,15 +13,15 @@ struct NodeView: View {
     
     @Binding var activeNode: Int
 
-    @Binding var bestEndingsFound = 0
+    @Binding var bestEndingsFound: Int
     
-    @Binding var goodEndingsFound = 0
+    @Binding var goodEndingsFound: Int
     
-    @Binding var okEndingsFound = 0
+    @Binding var okEndingsFound: Int
     
-    @Binding var badEndingsFound = 0
+    @Binding var badEndingsFound: Int
     
-    @Binding var deathEndingsFound = 0
+    @Binding var deathEndingsFound: Int
     
     @Binding var endingsFound: [Int]
     
@@ -94,9 +94,7 @@ struct NodeView: View {
                 badEndingsFound += 1
             } else if node.ending?.classification == .death {
                 deathEndingsFound += 1
-            } else {
-                break
-            }
+            } 
         }
     }
 }

@@ -26,7 +26,7 @@ struct GameView: View {
     
     @State var deathEndingsFound = 0
 
-    @State var endingsFound: Int = []
+    @State var endingsFound: [Int] = []
     
     var gameIsOn: Bool{
         return activeNode > 0
@@ -47,7 +47,7 @@ struct GameView: View {
             VStack {
                 
                 HStack{
-                    Button("Endings Found \(endingsFound)/13") {
+                    Button("Endings Found \(endingsFound.count)/13") {
                         openEndings = true
                     }
                     .padding()
@@ -98,7 +98,7 @@ struct GameView: View {
         } else {
             // Game begin's
             
-            NodeView(node: currentNode, activeNode: $activeNode)
+            NodeView(node: currentNode, activeNode: $activeNode, bestEndingsFound: $bestEndingsFound, goodEndingsFound: $goodEndingsFound, okEndingsFound: $okEndingsFound, badEndingsFound: $badEndingsFound, deathEndingsFound: $deathEndingsFound, endingsFound: $endingsFound)
         }
     }
     

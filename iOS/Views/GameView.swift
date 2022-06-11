@@ -47,7 +47,7 @@ struct GameView: View {
             VStack {
                 
                 HStack{
-                    Button("Endings Found \(endingsFound.count)/13") {
+                    Button("Endings Found: \(endingsFound.count)/13") {
                         openEndings = true
                     }
                     .padding()

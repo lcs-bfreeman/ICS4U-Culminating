@@ -1,12 +1,43 @@
-//
-//  Node.swift
-//  ICS4U-Culminating
-//
-//  Created by Hayden Couch on 2022-05-27.
-//
+import Cocoa
+import SwiftUI
 
-import Foundation
+struct Edge: Hashable {
+    
+    let destinationId: Int
+    let prompt: String
+    
+}
 
+// TODO: 1 - Add this enumeration to your project
+enum EndingClassification: String, CaseIterable {
+    case best = "best"
+    case good = "good"
+    case ok = "ok"
+    case bad = "bad"
+    case death = "death"
+}
+
+// TODO: 2 - Add this structure to your project
+struct Ending {
+    let classification: EndingClassification
+    let description: String
+    var color: String {
+        switch self.classification {
+        case .best:
+            return "#90C8E0"  // Light blue
+        case .good:
+            return "#FFDE5F"  // Pale yellow
+        case .ok:
+            return "#D7883C"  // Orange
+        case .bad:
+            return "#C1531E"  // Deep orange
+        case .death:
+            return "#AB1800"  // Deep red
+        }
+    }
+}
+
+// TODO: 3 - Update your story nodes to use the Ending type
 struct Node: Identifiable {
     let id: Int
     let paragraphs: [String]
@@ -15,9 +46,40 @@ struct Node: Identifiable {
     let ending: Ending?
 }
 
-let emptyNode = Node(id: 0, paragraphs: [], image: "", edges: [], ending: nil)
+struct StoryInformation {
+    let title: String
+    let authorOrAuthors: String
+    let seriesInfo: String
+    let publisherInfo: String
+}
 
-let nodes: [Int: Node] = [
+// TODO: 4 - Replace details of this instance of StoryInformation with data for your own group's story
+let storyInfo = StoryInformation(title: "The Royal Heist",
+                                 authorOrAuthors: "H. Couch, B. Kang, B. Freeman",
+                                 seriesInfo: "UK Roadmen #4",
+                                 publisherInfo: "RDM. Toronto, 2009")
+
+// A single node
+let testNode = Node(id: 1,
+                    paragraphs: [
+                        "You are a deep sea explorer searching for the famed lost city of Atlantis. This is your most challenging and dangerous mission. Fear and excitement are now your companions.",
+                        
+                        "It is morning and the sun pushes up on the horizon. The sea is calm. You climb into the narrow pilot's compartment of the underwater vessel *Seeker* with your special gear. The crew of the research vessel *Maray* screws down the hatch clamps. Now begins the plunge into the depths of the ocean. The *Seeker* crew begins lowering by a strong, but thin, cable. Within minutes, you are so deep in the ocean that little light filters down to you. The silence is eerie as the *Seeker* slips deeper and deeper. You peer out the thick glass porthole and see strange white fish drifting past, sometimes stopping to look at you–an intruder from another world.",
+                        
+                    ],
+                    image: "node-1",
+                    edges: [
+                        Edge(destinationId: 2,
+                             prompt: "*Turn to the next page*")
+                        ,
+                    ],
+                    ending: nil)
+
+let emptyNode = Node(id: 0, paragraphs: [""], image: nil, edges: [], ending: Ending(classification: .good, description: "Lorem\\nipsum"))
+
+// TODO: 5 - Replace the following list of nodes with your own group's nodes
+// An array of nodes that model the narrative's directed graph
+let storyNodes: [Int: Node] = [
 
     1 : Node(id: 1,
              paragraphs: [
@@ -285,3 +347,138 @@ let nodes: [Int: Node] = [
               edges: [],
               ending: Ending(classification: .good, description: "You get the \\n gold but also PTSD")),
 ]
+
+
+
+// Function to generate output that Graphviz requires
+func generateGraphvizCommands(using description: StoryInformation, with nodes: [Int : Node]) -> String {
+    
+    // Opening of graph
+    var output = "digraph \"[map]\" {\n"
+
+    // Start subgraph which contains table that comprises title section
+    output += "subgraph { \"title\" [shape=none label=<<table border=\"0\">\n"
+    output += "  <tr>\n"
+    output += "    <td align=\"left\"><font face=\"Verdana,Helvetica\" point-size=\"40\"><b>\(description.title)</b></font></td>\n"
+    output += "    <td width=\"100\"></td>\n"
+    output += "  </tr>\n"
+    output += "  <tr>\n"
+    output += "    <td align=\"left\"><font face=\"Verdana,Helvetica\" point-size=\"20\">By \(description.authorOrAuthors)</font></td>\n"
+    output += "    <td></td>"
+    output += "  </tr>\n"
+    output += "  <tr>\n"
+    output += "    <td>&nbsp;</td>\n"
+    output += "    <td></td>"
+    output += "  </tr>\n"
+    output += "  <tr>\n"
+    output += "    <td align=\"left\"><font face=\"Verdana,Helvetica\" point-size=\"16\">\(description.seriesInfo)</font></td>\n"
+    output += "    <td></td>"
+    output += "  </tr>\n"
+    output += "  <tr>\n"
+    output += "    <td align=\"left\"><font face=\"Verdana,Helvetica\" point-size=\"16\">\(description.publisherInfo)</font></td>\n"
+    output += "    <td></td>"
+    output += "  </tr>\n"
+
+    // End the table that comprises title section
+    output += "</table>>]\n"
+    output += "}\n"
+
+    // Make empty dictionary to track endings
+    var endingsCount = [String : Int]()
+
+    // Build the graph itself from a sorted list of the nodes
+    for (key, node) in nodes.sorted(by: { lhs, rhs in lhs.key < rhs.key }) {
+        
+        // Handle ending nodes
+        if let ending = node.ending {
+            
+            // Make ending nodes show up in red
+            output += "\(key) [style=\"filled\", fillcolor=\"\(ending.color)\"]\n"
+            
+            // Create an invisible node after each ending node
+            output += "\"\(ending.description) \(node.id)\" [style=invis]\n"
+            
+            // Make a label after the ending node
+            output += "\(key) -> \"\(ending.description) \(node.id)\" [labelangle=0, minlen=3,  color=white, taillabel=\"\\n\(ending.description)\", fontname=\"Helvetica Bold\"]\n"
+            
+            // Track endings by category
+            if let valueForKey = endingsCount[ending.classification.rawValue] {
+                // Increment count of endings of this type
+                endingsCount[ending.classification.rawValue]! = valueForKey + 1
+            } else {
+                // Start count of endings of this type
+                endingsCount[ending.classification.rawValue] = 1
+            }
+        }
+            
+        // Draw nodes and edges between nodes
+        output += "\(key) -> {"
+        for edge in node.edges {
+            output += "\(edge.destinationId);"
+        }
+        output += "} [minlen=2]\n"
+    }
+
+    // Start subgraph which endings analysis
+    output += "subgraph { \"endings\" [shape=none label=<<table border=\"0\">\n"
+    output += "  <tr>\n"
+    output += "  <td width=\"100\"></td>\n"
+    output += "    <td colspan=\"2\" align=\"left\"><font face=\"Verdana,Helvetica\" point-size=\"20\"><b>&nbsp;</b></font></td>\n"
+    output += "  </tr>\n"
+    output += "  <tr>\n"
+    output += "  <td></td>\n"
+    output += "    <td colspan=\"2\" align=\"left\"><font face=\"Verdana,Helvetica\" point-size=\"20\"><b>&nbsp;</b></font></td>\n"
+    output += "  </tr>\n"
+    output += "  <tr>\n"
+    output += "  <td></td>\n"
+    output += "    <td colspan=\"2\" align=\"left\"><font face=\"Verdana,Helvetica\" point-size=\"20\"><b>Analysis of endings</b></font></td>\n"
+    output += "  </tr>\n"
+
+    // Make placeholders for counts of ending types
+    for enumerationCase in EndingClassification.allCases {
+        
+        // Get count of endings for this ending type
+        var countForThisEndingType = 0
+        if let count = endingsCount[enumerationCase.rawValue] {
+            countForThisEndingType = count
+        }
+        
+        output += "  <tr>\n"
+        output += "  <td></td>\n"
+        output += "<td align=\"right\" valign=\"top\"><font face=\"Verdana,Helvetica\" point-size=\"16\">\(countForThisEndingType)</font></td>"
+        output += "    <td align=\"left\" valign=\"bottom\"><font face=\"Verdana,Helvetica\" point-size=\"18\" color=\"\(Ending.init(classification: enumerationCase, description: "").color)\"><b>\(enumerationCase.rawValue)</b></font></td>\n"
+        output += "  </tr>\n"
+    }
+
+    // End the table that comprises title section
+    output += "</table>>]\n"
+    output += "}\n"
+
+    // Close out the graph
+    output += "}\n"
+    
+    return output
+    
+}
+
+let graphVizCommands = generateGraphvizCommands(using: storyInfo,
+                                                with: storyNodes)
+
+// Copy to the clipboard
+let pasteBoard = NSPasteboard.general
+pasteBoard.clearContents()
+pasteBoard.setString(graphVizCommands, forType: .string)
+
+// TODO: 6 - Paste the output from this program into a BBEdit text document named 'input.txt'.
+
+// TODO: 7 - If you have not yet, install Homebrew.
+//
+//       https://brew.sh
+
+// TODO: 8 - If you have not yet, install graphviz by running this command in the Terminal
+//
+//       brew install graphviz
+
+// TODO: 9 - In the Terminal, from the folder 'input.txt' exists in, run the following command to generate your group's graph:
+//
+//           dot -Tpdf input.txt > output.pdf

@@ -47,7 +47,7 @@ struct GameView: View {
             VStack {
                 
                 HStack{
-                    Button("Endings Found \(endingsFound.count)/13") {
+                    Button("Endings Found: \(endingsFound.count)/13") {
                         openEndings = true
                     }
                     .padding()
@@ -76,20 +76,21 @@ struct GameView: View {
 
 
             .sheet(isPresented: $openSettings) {
-                Text("Test")
+                Text("Font Size:")
+                Slider(value: 10...100)
             }
             .sheet(isPresented: $openEndings) {
                 
                 VStack{
-                    Text("Best endings \(bestEndingsFound)/1")
+                    Text("Best Endings Found: \(bestEndingsFound)/1")
                         .padding()
-                    Text("Good endings \(goodEndingsFound)/1")
+                    Text("Good Endings Found: \(goodEndingsFound)/1")
                         .padding()
-                    Text("Ok endings \(okEndingsFound)/2")
+                    Text("OK Endings Found: \(okEndingsFound)/2")
                         .padding()
-                    Text("Bad endings \(badEndingsFound)/1")
+                    Text("Bad Endings Found: \(badEndingsFound)/1")
                         .padding()
-                    Text("Death endings \(deathEndingsFound)/8")
+                    Text("Death Endings Found: \(deathEndingsFound)/8")
                         .padding()
 
 

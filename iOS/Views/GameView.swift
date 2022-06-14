@@ -78,21 +78,32 @@ struct GameView: View {
 
 
             .sheet(isPresented: $openSettings) {
-                Text("Font Size:")
-                Slider(value: $fontSize, in: 10...100)
+                VStack {
+                    Text("Font Size:")
+                    Slider(value: $fontSize, in: 10...100)
+                        .padding()
+                    Text("Citations:")
+                    Text("https://www.pngall.com/wealth-png/download/32315")
+                    Text("https://freepnglogos.com/pics/crown")
+                }
             }
             .sheet(isPresented: $openEndings) {
                 
                 VStack{
                     Text("Best Endings Found: \(bestEndingsFound)/1")
+                        .foregroundColor(.blue)
                         .padding()
                     Text("Good Endings Found: \(goodEndingsFound)/1")
+                        .foregroundColor(.green)
                         .padding()
                     Text("OK Endings Found: \(okEndingsFound)/2")
+                        .foregroundColor(.yellow)
                         .padding()
                     Text("Bad Endings Found: \(badEndingsFound)/1")
+                        .foregroundColor(.orange)
                         .padding()
                     Text("Death Endings Found: \(deathEndingsFound)/8")
+                        .foregroundColor(.red)
                         .padding()
 
 

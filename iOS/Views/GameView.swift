@@ -28,6 +28,8 @@ struct GameView: View {
 
     @State var endingsFound: [Int] = []
     
+    @State var fontSize = 30.0
+    
     var gameIsOn: Bool{
         return activeNode > 0
     }
@@ -77,7 +79,7 @@ struct GameView: View {
 
             .sheet(isPresented: $openSettings) {
                 Text("Font Size:")
-                Slider(value: 10...100)
+                Slider(value: $fontSize, in: 10...100)
             }
             .sheet(isPresented: $openEndings) {
                 
